@@ -40,3 +40,38 @@ _48 + 36 + 24 = 108$_
 
 **d) Your Snowflake warehouse uses auto-scaling. For the first 10 days, it operates on 2 clusters for 10 hours per day. For the next 10 days, it scales up to 3 clusters for 10 hours per day. For the last 10 days, it scales up to 4 clusters for 10 hours per day. Calculate the total monthly budget. Assume the warehouse consumes 1 credit per hour per cluster.**
 
+___
+# 2. Theory questions
+These study questions are good to get an overview pf how snowflake works
+___
+
+**a)What are the main components of snowflake's architecture?**
+_There are three diffrent main components in snowflakes architecture._
+* _Cloud services_
+    * Security
+    * Managment 
+    * Metadata
+    * Optimazation
+
+* _Compute_
+    * Virtual warehouses
+
+* _Database storage_
+    * Structured
+    * Semi-structured
+    * Unstructured
+
+**b) Explain the role of the storage layer in snowflake?**
+_The storage in snowflake is responsible for storing the data. It is stored separetly from the compute wich means it can be used by multiple warehouses whitout needing to copy the data._
+
+**c) What is the purpose of the compute layer in snowflake?**
+_Inside the compute layer we find virtual warehouses. Which is a cluster of compute resources in snowflake. Virtual warehouses process SQL statements and, using snowspark, run code in languages, such as Java, Python and Scala. Each virtual warehouse is an independent compute cluster that dosen't share compute with other cirtual warehouses. As a result, each virtual warehouse has no effect on the performance of others._
+
+**d) How does the cloud services layer enhance the functionality of snowflake?**
+_THe cloud services layer contains a collection of services that tie together all of the diffrent components of snowflake in order to process user requests, from sig-in to query dispatch._
+
+**e) What is a virtual warehouse in Snowflake, and how does it differ from a traditional warehouse?**
+_In snowflake, a virtual warehouse us a cluster of computing resources used to execute SQL queries and process data. It provides the computing power, while Snowflake's storage layer stores the actual data._ 
+_One big diffrence is the fact that Snowflakes compute and storage are separated which means it can be started, stopped, resized, or suspended while you usually require dedictaed hardware/resources. Sins they are separated workloads won't compete for the compute and scaling can be done automatically for the workloads._
+
+**f) WHen are the cases you would want to scale up versus scaling out in terms of virtual warehouses and compute resources?**
