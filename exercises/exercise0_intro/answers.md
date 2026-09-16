@@ -74,4 +74,9 @@ _THe cloud services layer contains a collection of services that tie together al
 _In snowflake, a virtual warehouse us a cluster of computing resources used to execute SQL queries and process data. It provides the computing power, while Snowflake's storage layer stores the actual data._ 
 _One big diffrence is the fact that Snowflakes compute and storage are separated which means it can be started, stopped, resized, or suspended while you usually require dedictaed hardware/resources. Sins they are separated workloads won't compete for the compute and scaling can be done automatically for the workloads._
 
-**f) WHen are the cases you would want to scale up versus scaling out in terms of virtual warehouses and compute resources?**
+**f) When are the cases you would want to scale up versus scaling out in terms of virtual warehouses and compute resources?**
+_Scale up = make one warehouse bigger, and is used when a workload is too slow because it needs more compute power. For example: You have a warehouse running an expensive query. It takes 20 minutes on an XS warehouse. You could increase from XS -> S -> M -> L. This is good for large/complex queries, Big joins and aggregations, Data transformations, ETL/ELT jobs._
+_Sclae out = add more warehouses / clusters, and is used when you have many workloads/users running at the same time and they are competing for resources. Snowflake can use multiple clusters in a multi-cluster warehouse. For example: instead of having one enormusly powerful cluster, you can add multiple clusters so multiple queries cab run concurrently. This is good for, bi dashboards, lots of concurrent queries, unpredicted workloads, avoiding queries waiting in que.
+
+**g) How does snoflake's pricing model differ from traditional on-premise data warehousing solutions?**
+_
