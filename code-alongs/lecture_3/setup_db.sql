@@ -1,0 +1,16 @@
+USE ROLE SYSADMIN;
+
+SELECT CURRENT_ROLE();
+
+SELECT CURRENT_SECONDARY_ROLES();
+
+CREATE DATABASE ice_cream_db;
+
+CREATE WAREHOUSE dev_wh
+WITH
+WAREHOUSE_SIZE = 'XSMALL'
+AUTO_SUSPEND = 60
+AUTO_RESUME = TRUE
+INITIALLY_SUSPENDED = TRUE -- Is not active if not used, after creation
+COMMENT = 'Warehouse for development and analysis database.';
+
