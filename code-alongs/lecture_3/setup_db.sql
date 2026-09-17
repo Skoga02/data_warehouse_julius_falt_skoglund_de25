@@ -13,4 +13,3 @@ AUTO_SUSPEND = 60
 AUTO_RESUME = TRUE
 INITIALLY_SUSPENDED = TRUE -- Is not active if not used, after creation
 COMMENT = 'Warehouse for development and analysis database.';
-
