@@ -1,3 +1,5 @@
+# Exercise 1 - Extracting and loading
+
 
 ## **Glossary**
 * `Sysadmin`: Can create, warehouses, objects, and databases. 
