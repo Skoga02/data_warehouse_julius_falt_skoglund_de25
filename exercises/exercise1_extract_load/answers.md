@@ -1,5 +1,31 @@
 # Exercise 1 - Extracting and loading
+## Theory questions
+**a) Why is the principal of least privilege important in a company?**
+_
 
+**b) Explain the role of dlt in managing data pipelines.**
+_
+
+**c) What is a data connector and why is it important in data integration?**
+_
+
+**d) What are the three diffrent write dispositions in dlt?**
+_
+
+**e) What is ELT and how does it differ from ETL?**
+_
+
+**f) Discuss the advantages of performing data transformations after loading the data.**
+_
+
+**g) What is the purpose of roles in Snowflake?**
+_
+
+**h) Explain the diffrence between USAGE and OWNERSHIP privileges.**
+_
+
+**i) What information is required to create a user in Snowflake?**
+_
 
 ## **Glossary**
 * `Sysadmin`: Can create, warehouses, objects, and databases. 
