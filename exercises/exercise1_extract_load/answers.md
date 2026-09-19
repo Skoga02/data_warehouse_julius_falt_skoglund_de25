@@ -1,16 +1,16 @@
 # Exercise 1 - Extracting and loading
 ## Theory questions
 **a) Why is the principal of least privilege important in a company?**
-_
+_It improves security, reduces the risk of accidental changes or delitions, limits the damage if an account is compromised,, and makes it easier to control who can access sensitive data._
 
 **b) Explain the role of dlt in managing data pipelines.**
-_
+_Dlt can handle things like: Extracting data from APIs, CSV files, databases, etc. It can also load data into Snowflake, creating tables and schemas, managing data types and nested data, and keeping track of pipelines state and loads._
 
 **c) What is a data connector and why is it important in data integration?**
-_
+_A data connector is a component that allows a data pipeline to communicate with a particular data source or destination. FOr example: An API connector -> Connects to PostgreSQL, A PostgreSQL connector -> connects to PostgreSQL, or a Snowflake connector -> loads data into Snowflake._
 
 **d) What are the three diffrent write dispositions in dlt?**
-_
+_There are three main write dispositions: 1. `replace` replaces the existing data with the new data. 2. `append` adds the new data to the existing data, and 3. `merge` updates existing records and/or adds new records based on a key._
 
 **e) What is ELT and how does it differ from ETL?**
 _
