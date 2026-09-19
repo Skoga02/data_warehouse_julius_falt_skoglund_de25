@@ -1,0 +1,14 @@
+USE ROLE SYSADMIN;
+
+SELECT CURRENT_ROLE();
+
+CREATE WAREHOUSE parking_wh
+WITH
+WAREHOUSE_SIZE = 'SMALL'
+AUTO_SUSPEND = 60
+AUTO_RESUME = TRUE
+INITIALLY_SUSPENDED = TRUE
+COMMENT = 'This is a warehouse for the parking laboration.';
+
+CREATE DATABASE iparking;
+CREATE SCHEMA iparking.staging;
