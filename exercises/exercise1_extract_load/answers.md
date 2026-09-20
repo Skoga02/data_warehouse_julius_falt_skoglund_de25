@@ -76,18 +76,30 @@ _So basic concept is:_
 USER -> ROLE -> PRIVILEGES -> DATABASE / SCHEMA / TABLE
 ```
 ## **Glossary**
-* `Sysadmin`: Can create, warehouses, objects, and databases. 
-* `Useradmin`: (Administraitor) for user and role creations.
-* `orgadmin`: manages operations on organization level. Usually able to create accounts in organization. 
-* `Securityadmin`: Has a special privilage that means that he can grant privilage of DB1 or any other objects. Even do he can not use DB1 or personally cannot own it, sins Role 1 owns it.
-* `Accountadmin`: Most powerful role under the account role class. Grant to few users, sins this is all access role. Usually a role for the data engineer manager sins this usually inludes billing and payments.
+* `Sysadmin`: A Snowflake system role used to create, warehouses, objects, databases, schemas, and tables. 
+* `Useradmin`: A Snowflake system role used to create and manage other objects.
+* `orgadmin`:  A Snowflake system role with organized-level privilages, such as managing accounts within an organization.
+* `Securityadmin`: A snowflake system role mainly used to manage security, roles, grants, and access privialges.
+* `Accountadmin`: The highest-level snowflake role. It has broad access to the account and should be used carefully.
 * `Role inheritance`: In this case is already built by snowflake. Highest role is `Accountadmin`, under that we have `Securityadmin`, and `Sysadmin`, under that we have `Useradmin` and `Custom role`.
 * `Public role`: Objects owned by PUBLIC is avalible to everyone. Usually used when testing othervise barely used.
-* `Public schema`: 
-* `API`:
-* `ETL`: Extract Transform Load
-* `ELT`: Extract Load Transform
-* `Data ingestion`: 
-* `Batch ingestion`:
-* `Streaming ingestion`: 
-* `Incremental load`:
+* `Public schema`: A schmea that is commonly available by default in a database. It can contain tables, views, and other database objects.
+* `API`: Application Programming Interface. A way for applications to communicate with and request data from another application or service.
+* `ETL`: Extract, Transform, Load. Data is extracted from a source, transformed, and then loaded into the destination.  
+* `ELT`: Extract, Load, Transform. Data is extracted, loaded into the destination first, and transformed there.
+* `Data ingestion`: The process of collecting and bringing data from one or more sources into a data system.
+* `Batch ingestion`: Data is collceted and processsed in groups at scheduled or specific intevals rather than continuously.
+* `Streaming ingestion`: Data is continuously ingested and proccessed as it produced, often with very low latency.
+* `Incremental load`: Loading only new or chenged data instead of laoding the entire dataset agian.
+* `dlt connectors`: Pre-built dlt components that help extract data from difffrent sources such as APIs, datasets, or files.
+* `snowflake user`: An account identity that can log in to Snowflake and perform actions according to the rules and privileges assigned to them.
+* `staging layer`: A temporary or intemediate area where raw or recently extracted data is stored before further transformation or processing.
+* `granted to`: Specifies who recives a privilege. Example GRANT USAGE ON DATABASE movie TO ROLE movies_reader; -> movies_reader is the role being granted the privilege.
+* `granted on`: SPecifies what object the privilege applies to. Example: GRANT USAGE ON DATABASE movies... -> the privilege is grnated on the movies database.
+* `granted by`: Specifies who gave the privilege or which role was responsible for granting it.
+* `secrets.toml`: A dlt configuration file used to store sensitive connection infromation and credentials, such as database credentials or API keys.
+* `RBAC`: Role-Based Access Control. A security model where permissions are assigned to roles, and useres recive permissions through those roles.
+* `CRUD operations`: The four basic database operation: Create, Read, Update, Delete.
+* `resource dlt`: A dlt object that represents a specific set of data that should be extracted and loaded. It defines how data is provided to the pipline.
+* `source dlt`: A dlt object that gorups related resources from the same data source.
+* `yield python`: A python keyword used to produce values one at a time from a function. It turns the function into a generator isnstead of returning all values at once.
