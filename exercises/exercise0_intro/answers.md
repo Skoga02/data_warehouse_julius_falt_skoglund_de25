@@ -1,5 +1,14 @@
-# 1. How much does it cost 
-___ 
+# Exercise 0 - Introduction
+
+In this exercise, you get to familiarize yourself with snowflake and snowsql. You will also get some overview of pricing in Snowflake. Further, you'll get an SQL repetition through querying data from snowflakes marketplace.
+
+[!NOTE] These exercises covers lectures 00-04.
+
+## 0. Google queries
+[snowsql.sql](snowsql.sql)
+
+## 1. How much does it cost 
+
 **a) You have a simple workload that runs daily in Snowflake. The workload uses 0.5 credits per day. Claculate the total usage and cost for 30-day month.**
 
 _0.5 * 30 = 15_
@@ -40,8 +49,7 @@ _48 + 36 + 24 = 108$_
 
 **d) Your Snowflake warehouse uses auto-scaling. For the first 10 days, it operates on 2 clusters for 10 hours per day. For the next 10 days, it scales up to 3 clusters for 10 hours per day. For the last 10 days, it scales up to 4 clusters for 10 hours per day. Calculate the total monthly budget. Assume the warehouse consumes 1 credit per hour per cluster.**
 
-___
-# 2. Theory questions
+## 2. Theory questions
 These study questions are good to get an overview pf how snowflake works
 ___
 
@@ -100,29 +108,32 @@ Time Travel -> user-accessible historical recovery
 Fail-safe -> emergency/disaster recovery
 ```
 
-# Theory 
-`Downstream`: A system, process or user that recives or ueses data from another system.
-`Upstream`: A system or process that provides data to another system.
-`data warehouse`: A system designed to store and analyze large amounts of structured data, often used for reporting and analytics.
-`cloud computing`: USing computing resources such as storage, sservers and databases over the internet instead of managing the physical hardware yourself.
-`OLAP`: Online Analytics Processing. Used for analyzing large amounts of data, reporting and business intelegence.
-`OLTP`: Online Transaction Processing. Used for handling many small, frequent transactions, such as interesting or updating customer orders.
-`virtual warehouse`: Snowflake's compute resource used to execute SQL queries and perform data loading and other operations.
-`extrenal stage`: A Snowflake object that points to data stored outside Snowflake, such as files in Amazon S3, Azure Blob Storage or Google Cloud Storage.
-`data consumer`: A person, application or system that uses data produced by another system. 
-`Scaling. out`: Increasing capacity by adding mote compute resources or machines.
-`scaling up`: Increasing the power of an existing compute resources, such as changing a virtual warehouse from x-small to large.
-`Snowflake credit`: A unit used by Snowflake to measure compute consumption. The number of credits used depends on the compute resources and how long they run.
-`securable object`: A Snowflake object that can have access privileges assigned to it, such as database, schema, table or view.
-`schema`: A logical container inside a database that contains objects such as tables, views and stages.
-`permanent table`: A normal Snowflake table whose data is retained according to normal Snowflake storage and Time Travel rules.
-`transient table`: A table. intended for temporary or intermediate data that does not require Fail-safe protection.
-`temporary table`: A table that exist only for the duration of the current user session and is automatically removed when the session ends.
-`time travel`: Snowflake functionality that allows you to access historical versions of data that was accidentaly changed or deleted within the retention period.
-`fail-safe`: An additional recovery period after Time Travel during which Snoflake can recover data in certain disaster-recovery situations. It is not intended for normal user access.
-`view`: A virtual table based on the reuslt of a SQL query. It normally does not store a separate copy of the underlying data.
-`table`A databse objct that stores data in rows and columns.
-`DML`: Data Manipulation Language. SQL commands used to modify data, such as INSERT, UPDATE, DELETE, and MERGE.
-`DDL`: Data Definition Language. SQL commands used to create or modify database objects, such as CREATE, ALTER and DROP.
-`DQL`: Data Query Language. SQL used to retrieve data, primarily through SELECT statements.
-`DCL`: Data Control Language. SQL commands used to control access and permissons, such as GRANT and REVOKE.
+## Glossary
+
+| Terminology | Explanation |
+|---|---|
+| Downstream | A system, process or user that receives or uses data from another system. |
+| Upstream | A system or process that provides data to another system. |
+| Data warehouse | A system designed to store and analyze large amounts of structured data, often used for reporting and analytics. |
+| Cloud computing | Using computing resources such as storage, servers and databases over the internet instead of managing the physical hardware yourself. |
+| OLAP | Online Analytical Processing. Used for analyzing large amounts of data, reporting and business intelligence. |
+| OLTP | Online Transaction Processing. Used for handling many small, frequent transactions, such as inserting or updating customer orders. |
+| Virtual warehouse | Snowflake's compute resource used to execute SQL queries and perform data loading and other operations. |
+| External stage | A Snowflake object that points to data stored outside Snowflake, such as files in Amazon S3, Azure Blob Storage or Google Cloud Storage. |
+| Data consumer | A person, application or system that uses data produced by another system. |
+| Scaling out | Increasing capacity by adding more compute resources or machines. |
+| Scaling up | Increasing the power of an existing compute resource, such as changing a virtual warehouse from X-Small to Large. |
+| Snowflake credit | A unit used by Snowflake to measure compute consumption. The number of credits used depends on the compute resources and how long they run. |
+| Securable object | A Snowflake object that can have access privileges assigned to it, such as a database, schema, table or view. |
+| Schema | A logical container inside a database that contains objects such as tables, views and stages. |
+| Permanent table | A normal Snowflake table whose data is retained according to normal Snowflake storage and Time Travel rules. |
+| Transient table | A table intended for temporary or intermediate data that does not require Fail-safe protection. |
+| Temporary table | A table that exists only for the duration of the current user session and is automatically removed when the session ends. |
+| Time Travel | Snowflake functionality that allows you to access historical versions of data that was accidentally changed or deleted within the retention period. |
+| Fail-safe | An additional recovery period after Time Travel during which Snowflake can recover data in certain disaster-recovery situations. It is not intended for normal user access. |
+| View | A virtual table based on the result of a SQL query. It normally does not store a separate copy of the underlying data. |
+| Table | A database object that stores data in rows and columns. |
+| DML | Data Manipulation Language. SQL commands used to modify data, such as INSERT, UPDATE, DELETE, and MERGE. |
+| DDL | Data Definition Language. SQL commands used to create or modify database objects, such as CREATE, ALTER and DROP. |
+| DQL | Data Query Language. SQL used to retrieve data, primarily through SELECT statements. |
+| DCL | Data Control Language. SQL commands used to control access and permissions, such as GRANT and REVOKE. |
