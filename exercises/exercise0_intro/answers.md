@@ -79,4 +79,50 @@ _Scale up = make one warehouse bigger, and is used when a workload is too slow b
 _Sclae out = add more warehouses / clusters, and is used when you have many workloads/users running at the same time and they are competing for resources. Snowflake can use multiple clusters in a multi-cluster warehouse. For example: instead of having one enormusly powerful cluster, you can add multiple clusters so multiple queries cab run concurrently. This is good for, bi dashboards, lots of concurrent queries, unpredicted workloads, avoiding queries waiting in que.
 
 **g) How does snoflake's pricing model differ from traditional on-premise data warehousing solutions?**
-_
+_Snoeflake uses a consuumption based pricing model. YOu mainly pay for the compute you use and the amount of data you store. COmpute is measured using Snowflake Credits._
+
+**h) What is the difference pay-as-you-go and upfront storaged, and when should you choose one over the other?**
+_Pay-as-you-go storage means you pay based on the amount of storage you actually use over time. It is flexible and works well when your storage need can change. While upfront storage means paying for a predetemined amount of storage in advance. It can be useful when you know you storage requirements are stable and predictable.
+
+**i) Explain the conceot of TIme Travel and Fail-safe in Snowflake and it's use cases.**
+_Time Travel allows to access or restore historical data that has been changed or delted within Snowflake's retention period._
+_For example if wou accidentlly delete rows from a table, Time Travel can be used to look at the table as it existed before the deletion and restore the data._
+Common use case:
+* Recovering accidentally deleted or changed data
+* Looking at historical versions of a table
+* Invetsigating data chenages
+
+_Fail-safe is a separeate recovery mechanism that provides an additional period of data protection after the TIme Travel retention period has ended. It is primarily intended for disaster recovery, not for normal user access or everyday data recovery._
+
+A simple way to remember it:
+```
+Time Travel -> user-accessible historical recovery
+Fail-safe -> emergency/disaster recovery
+```
+
+# Theory 
+`Downstream`: A system, process or user that recives or ueses data from another system.
+`Upstream`: A system or process that provides data to another system.
+`data warehouse`: A system designed to store and analyze large amounts of structured data, often used for reporting and analytics.
+`cloud computing`: USing computing resources such as storage, sservers and databases over the internet instead of managing the physical hardware yourself.
+`OLAP`: Online Analytics Processing. Used for analyzing large amounts of data, reporting and business intelegence.
+`OLTP`: Online Transaction Processing. Used for handling many small, frequent transactions, such as interesting or updating customer orders.
+`virtual warehouse`: Snowflake's compute resource used to execute SQL queries and perform data loading and other operations.
+`extrenal stage`: A Snowflake object that points to data stored outside Snowflake, such as files in Amazon S3, Azure Blob Storage or Google Cloud Storage.
+`data consumer`: A person, application or system that uses data produced by another system. 
+`Scaling. out`: Increasing capacity by adding mote compute resources or machines.
+`scaling up`: Increasing the power of an existing compute resources, such as changing a virtual warehouse from x-small to large.
+`Snowflake credit`: A unit used by Snowflake to measure compute consumption. The number of credits used depends on the compute resources and how long they run.
+`securable object`: A Snowflake object that can have access privileges assigned to it, such as database, schema, table or view.
+`schema`: A logical container inside a database that contains objects such as tables, views and stages.
+`permanent table`: A normal Snowflake table whose data is retained according to normal Snowflake storage and Time Travel rules.
+`transient table`: A table. intended for temporary or intermediate data that does not require Fail-safe protection.
+`temporary table`: A table that exist only for the duration of the current user session and is automatically removed when the session ends.
+`time travel`: Snowflake functionality that allows you to access historical versions of data that was accidentaly changed or deleted within the retention period.
+`fail-safe`: An additional recovery period after Time Travel during which Snoflake can recover data in certain disaster-recovery situations. It is not intended for normal user access.
+`view`: A virtual table based on the reuslt of a SQL query. It normally does not store a separate copy of the underlying data.
+`table`A databse objct that stores data in rows and columns.
+`DML`: Data Manipulation Language. SQL commands used to modify data, such as INSERT, UPDATE, DELETE, and MERGE.
+`DDL`: Data Definition Language. SQL commands used to create or modify database objects, such as CREATE, ALTER and DROP.
+`DQL`: Data Query Language. SQL used to retrieve data, primarily through SELECT statements.
+`DCL`: Data Control Language. SQL commands used to control access and permissons, such as GRANT and REVOKE.
