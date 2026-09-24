@@ -43,3 +43,13 @@ tempCodeRunnerFile.py
 
 # Hide passwords
 **/.dlt
+
+setup_user_09.sql
+
+
+target/
+dbt_packages/
+logs/
+.env
+macros/
+tests/
