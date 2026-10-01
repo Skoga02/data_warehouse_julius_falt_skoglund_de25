@@ -4,7 +4,7 @@ with stg_job_ads as (
 )
 
 select
-    experience_requierd as experience_required,
-    driving_license_requierd as driver_license,
+    experience_required as experience_required,
+    driving_license_required as driver_license,
     access_to_own_car
 from stg_job_ads
