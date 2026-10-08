@@ -53,3 +53,6 @@ logs/
 .env
 macros/
 tests/
+
+# dagster
+**/.tmp*/
